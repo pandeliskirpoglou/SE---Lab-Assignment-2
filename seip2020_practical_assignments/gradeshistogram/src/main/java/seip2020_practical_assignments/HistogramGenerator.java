@@ -11,6 +11,13 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
+/***
+ * 
+ * @author pandeliskirpoglou This class demonstrates how to build a histogram of
+ *         grades with JFreeChart
+ * @since March 2020
+ */
+
 public class HistogramGenerator {
 
 	public static void main(String[] args) {
@@ -20,6 +27,15 @@ public class HistogramGenerator {
 		generateChart(grades);
 	}
 
+	/***
+	 * 
+	 * This method receives a path of a file, opens it and stores the frequences of the 
+	 * grades given in an array called grades.
+	 * 
+	 * @param path A string including the path of the file given from the user
+	 */
+
+	
 	public static int[] getGrades(String path) {
 		int[] grades = new int[11];
 		int grade = 0;
@@ -41,6 +57,16 @@ public class HistogramGenerator {
 		return grades;
 	}
 
+	/***
+	 * 
+	 * This method receives an array of the frequencies of the grades found in the file given. In return
+	 * it provides and shows a histogram of those grades with the grades being on the X axis and the
+	 * frequencies on the Y axis.
+	 * 
+	 * @param dataValues A single dimension array including the frequencies of the grades
+	 */
+
+	
 	public static void generateChart(int[] dataValues) {
 		/*
 		 * The XYSeriesCollection object is a set XYSeries series (dataset) that can be

@@ -11,8 +11,8 @@
 
 	<!-- Info of module -->
 	<artifactId>gradeshistogram</artifactId>
-	<name> Histogram Generator </name>
-	<description> Histogram of grades </description>
+	<name>Histogram Generator</name>
+	<description>This module creates a histogram from a file given using JFreeChart</description>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
