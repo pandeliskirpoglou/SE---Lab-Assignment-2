@@ -7,8 +7,8 @@
 	<groupId>gr.aueb.dmst.pandeliskirpoglou</groupId>
 	<artifactId>seip2020_practical_assignments</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Histogram of Grades</name>
-	<description>This projects delivers a histogram of grades between 0-10 from a file given</description>
+	<name>SEIP Practical Assignments</name>
+	<description>This project delivers certain types of tools given as assignments</description>
 	<packaging>pom</packaging>
 	
 	<properties>
