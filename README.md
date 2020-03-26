@@ -61,7 +61,7 @@ For example a path such: C:\\Users\\user1\\githubRepos\\grades.txt shall be chan
 So the command for the execution will look like this:
 
 ```
-java -jar gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar C:\\\Users\\\user1\\\githubRepos\\\grades.txt
+java -jar gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar C:\\Users\\user1\\githubRepos\\grades.txt
 ```
 
 ## Built With
