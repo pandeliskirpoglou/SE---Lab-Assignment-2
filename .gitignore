@@ -1,0 +1,15 @@
+# Eclipse files generated at creation of a project
+.recommenders
+.metadata
+.settings
+*.classpath
+*.project
+
+# Maven output files
+target
+
+# Compiled files
+*.class
+
+# Tests
+test
