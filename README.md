@@ -1,9 +1,6 @@
 # SE--Practical Assignments
 
-# Unit Testing demonstration project
-[![Build Status](https://travis-ci.org/AntonisGkortzis/UnitTestingDemoProject.svg?branch=master)](https://travis-ci.org/AntonisGkortzis/UnitTestingDemoProject)
-[![codecov](https://codecov.io/gh/AntonisGkortzis/UnitTestingDemoProject/branch/master/graph/badge.svg)](https://codecov.io/gh/AntonisGkortzis/UnitTestingDemoProject)
-[![Coverage Status](https://coveralls.io/repos/github/AntonisGkortzis/UnitTestingDemoProject/badge.svg?branch=master&service=github)](https://coveralls.io/github/AntonisGkortzis/UnitTestingDemoProject)
+[![Build Status](https://travis-ci.org/github/pandeliskirpoglou/SE---Lab-Assignment-2.svg?branch=development)](https://travis-ci.org/github/pandeliskirpoglou/SE---Lab-Assignment-2)
 
 ## Purpose of this Repository
 
