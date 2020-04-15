@@ -2,3 +2,6 @@ language: java
 
 jdk:
   - openjdk8
+
+before_script:
+  - cd seip2020_practical_assignments
