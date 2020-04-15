@@ -10,7 +10,7 @@
 
 	<!-- Info of module -->
 	<artifactId>unittesting</artifactId>
-	<name>Math Calculations</name>
+	<name>Testing Arithmetic Operations</name>
 	<description>This is a module for testing basic arithmetic operations</description>
 
 	<dependencies>
