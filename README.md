@@ -7,7 +7,7 @@
 The purpose of this repository is to complete and deliver certain functions of different assignments such as:
 
 * Building a histogram of grades between 0-10
-* Testing Arithmetical Operations
+* Testing Arithmetic Operations
 
 ## Instructions for modules
 
@@ -16,6 +16,7 @@ The purpose of this repository is to complete and deliver certain functions of d
 
 ## Built With
 
+* [JUnit 4.12](https://mvnrepository.com/artifact/junit/junit/4.12) - Repository used for testing
 * [JFreeChart](https://mvnrepository.com/artifact/org.jfree/jfreechart) - Repository used for charts
 * [Maven](https://maven.apache.org/) - Dependency Management
 
