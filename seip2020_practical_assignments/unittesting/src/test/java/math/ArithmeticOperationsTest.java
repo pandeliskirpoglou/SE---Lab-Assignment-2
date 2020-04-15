@@ -24,7 +24,7 @@ public class ArithmeticOperationsTest {
 	public void testResultsForDivide() {
 		Assert.assertEquals(2.0, ao.divide(2.6, 1.3), 0.0001);
 	}
-  
+
 	/*
 	 * A unit test that checks if the illegal argument exception is thrown correctly
 	 */

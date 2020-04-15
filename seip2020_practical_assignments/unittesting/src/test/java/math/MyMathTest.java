@@ -1,9 +1,10 @@
 package math;
 
+import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import math.MyMath; 
+import math.MyMath;
 
 public class MyMathTest {
 
@@ -33,6 +34,16 @@ public class MyMathTest {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("number should be 0 or above and 12 or below");
 		mm.factorial(13);
+	}
+
+	/*
+	 * A unit test that checks if the result of the method factorial is correct
+	 * (asked for separate test cases)
+	 */
+	
+	@Test
+	public void testResultsOfFactorialMethod() {
+		Assert.assertEquals(6, mm.factorial(3), 0.0001);
 	}
 
 }
