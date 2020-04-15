@@ -1,6 +1,6 @@
 # SE--Practical Assignments
 
-[![Build Status](https://travis-ci.com/pandeliskirpoglou/SE---Lab-Assignment-2.svg?token=sj2oqcqiqbuxzsYcRzSv&branch=master)](https://travis-ci.org/github/pandeliskirpoglou/SE---Lab-Assignment-2)
+[![Build Status](https://travis-ci.com/pandeliskirpoglou/SE---Lab-Assignment-2.svg?token=sj2oqcqiqbuxzsYcRzSv&branch=development)](https://travis-ci.com/pandeliskirpoglou/SE---Lab-Assignment-2)
 
 ## Purpose of this Repository
 
