@@ -24,7 +24,7 @@ public class ArithmeticOperationsTest {
 	public void testResultsForDivide() {
 		Assert.assertEquals(2.0, ao.divide(2.6, 1.3), 0.0001);
 	}
-
+  
 	/*
 	 * A unit test that checks if the illegal argument exception is thrown correctly
 	 */
@@ -71,12 +71,12 @@ public class ArithmeticOperationsTest {
 	 * A unit test that checks if the illegal argument exception for MAXVALUE is
 	 * thrown correctly
 	 */
-	
+
 	@Test
 	public void testMaxValueException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The product does not fit in an Integer variable");
-		ao.multiply(9999999,9999999);
+		ao.multiply(9999999, 9999999);
 	}
 
 }
