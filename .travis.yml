@@ -5,3 +5,9 @@ jdk:
 
 before_script:
   - cd seip2020_practical_assignments
+
+script:
+  - mvn clean package jacoco:report coveralls:report
+
+after_success:
+- bash <(curl -s https://codecov.io/bash) -t 2e508bbc-0ec1-4cdd-b59e-0229e29c7c7b
