@@ -55,13 +55,17 @@ public class FileIOTest {
 		String emptyFilePath = path.concat("empty_file.txt");
 		fileio.readFile(emptyFilePath);
 	}
-	
-	@Test 
+
+	/*
+	 * A unit test that tests invalid entries
+	 */
+
+	@Test
 	public void testReadFileContainsInvalidEntries() {
 		thrown.expect(NumberFormatException.class);
-		thrown.expectMessage("Grades should be integers");
-		String emptyFilePath = path.concat("grades_invalid.txt");
-		fileio.readFile(emptyFilePath);
+		thrown.expectMessage("Grade number should be an integer");
+		String invalidFilePath = path.concat("grades_invalid.txt");
+		fileio.readFile(invalidFilePath);
 	}
-	
+
 }
