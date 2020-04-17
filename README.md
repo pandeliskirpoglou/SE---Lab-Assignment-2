@@ -1,7 +1,7 @@
 # SE--Practical Assignments
 
 [![Build Status](https://travis-ci.com/pandeliskirpoglou/SE---Lab-Assignment-2.svg?token=sj2oqcqiqbuxzsYcRzSv&branch=development)](https://travis-ci.com/pandeliskirpoglou/SE---Lab-Assignment-2)
-[![codecov](https://codecov.io/gh/pandeliskirpoglou/SE---Lab-Assignment-2/branch/master/graph/badge.svg?token=47G5K7Y1IH)](https://codecov.io/gh/pandeliskirpoglou/SE---Lab-Assignment-2)
+[![codecov](https://codecov.io/gh/pandeliskirpoglou/SE---Lab-Assignment-2/branch/development/graph/badge.svg?token=47G5K7Y1IH)](https://codecov.io/gh/pandeliskirpoglou/SE---Lab-Assignment-2)
 
 ## Purpose of this Repository
 
