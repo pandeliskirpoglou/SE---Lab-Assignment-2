@@ -7,7 +7,7 @@ import io.FileIO;
 public class FileIOTest {
 
 	FileIO fileio = new FileIO();
-	public static String path = "src/test/resources";
+	public static String path = "src/test/resources/";
 
 	@Test
 	public void testReadFile() {
