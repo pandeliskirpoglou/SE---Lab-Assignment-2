@@ -32,7 +32,7 @@ public class FileIOTest {
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	
+
 	/*
 	 * A unit test that tests illegal argument exception for invalid path
 	 */
@@ -43,7 +43,7 @@ public class FileIOTest {
 		thrown.expectMessage("Input file does not exist");
 		fileio.readFile("invalidPath");
 	}
-	
+
 	/*
 	 * A unit test that tests illegal argument exception for invalid path
 	 */
@@ -55,6 +55,13 @@ public class FileIOTest {
 		String emptyFilePath = path.concat("empty_file.txt");
 		fileio.readFile(emptyFilePath);
 	}
-
-
+	
+	@Test 
+	public void testReadFileContainsInvalidEntries() {
+		thrown.expect(NumberFormatException.class);
+		thrown.expectMessage("Grades should be integers");
+		String emptyFilePath = path.concat("grades_invalid.txt");
+		fileio.readFile(emptyFilePath);
+	}
+	
 }
