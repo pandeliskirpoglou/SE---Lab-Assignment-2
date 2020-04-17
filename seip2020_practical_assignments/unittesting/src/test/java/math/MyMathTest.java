@@ -6,6 +6,12 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import math.MyMath;
 
+/**
+ * A class that provides test cases for the MyMath class.
+ * 
+ * @author pandeliskirpoglou (pand181567@yahoo.com)
+ */
+
 public class MyMathTest {
 
 	/*
@@ -40,26 +46,38 @@ public class MyMathTest {
 	 * A unit test that checks if the result of the method factorial is correct
 	 * (asked for separate test cases)
 	 */
-	
+
 	@Test
 	public void testResultsOfFactorialMethod() {
 		Assert.assertEquals(6, mm.factorial(3), 0.0001);
 	}
-	
-	@Test (expected = IllegalArgumentException.class)
+
+	/*
+	 * A unit test that checks if the illegal argument for number below 2 is thrown
+	 * correctly
+	 */
+
+	@Test(expected = IllegalArgumentException.class)
 	public void testIsPrimeBelowTwo() {
 		mm.isPrime(0);
 	}
-	
-	@Test 
+
+	/*
+	 * A unit test that checks result for a prime number
+	 */
+
+	@Test
 	public void testIsPrimePositiveResults() {
 		Assert.assertEquals(true, mm.isPrime(2));
 	}
-	
-	@Test 
+
+	/*
+	 * A unit test that checks result for a number which is not prime
+	 */
+
+	@Test
 	public void testIsPrimeNegativeResults() {
 		Assert.assertEquals(false, mm.isPrime(6));
 	}
-	
 
 }
