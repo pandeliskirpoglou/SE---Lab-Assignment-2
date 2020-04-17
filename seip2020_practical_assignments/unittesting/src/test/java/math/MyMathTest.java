@@ -45,5 +45,21 @@ public class MyMathTest {
 	public void testResultsOfFactorialMethod() {
 		Assert.assertEquals(6, mm.factorial(3), 0.0001);
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testIsPrimeBelowTwo() {
+		mm.isPrime(0);
+	}
+	
+	@Test 
+	public void testIsPrimePositiveResults() {
+		Assert.assertEquals(true, mm.isPrime(2));
+	}
+	
+	@Test 
+	public void testIsPrimeNegativeResults() {
+		Assert.assertEquals(false, mm.isPrime(6));
+	}
+	
 
 }
