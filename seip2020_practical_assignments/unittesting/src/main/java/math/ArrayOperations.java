@@ -1,6 +1,8 @@
 package math;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import io.FileIO;
 
@@ -26,18 +28,13 @@ public class ArrayOperations {
 
 	public int[] findPrimesInFile(FileIO fileio, String filepath, MyMath myMath) {
 		int[] arrayOfNumbers = fileio.readFile(filepath);
-		int[] arrayOfPrimeNumbers = {};
+		List<Integer> arrayOfPrimeNumbers = new ArrayList<>();
 		for (int i = 0; i < arrayOfNumbers.length; i++) {
 			if (myMath.isPrime(arrayOfNumbers[i])) {
-				arrayOfPrimeNumbers = Arrays.copyOf(arrayOfPrimeNumbers, arrayOfPrimeNumbers.length + 1);
-				// Extending the length of arrayOfPrimeNumbers by one to add the new prime
-				// number
-				arrayOfPrimeNumbers[arrayOfPrimeNumbers.length - 1] = arrayOfNumbers[i];
-				// Adding the new prime number
-
+				arrayOfPrimeNumbers.add(arrayOfNumbers[i]);
 			}
 		}
-		return arrayOfPrimeNumbers;
+		return arrayOfPrimeNumbers.stream().mapToInt(i -> i).toArray();
 	}
 
 }
