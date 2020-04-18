@@ -26,6 +26,16 @@ public class ArithmeticOperationsTest {
 	}
 
 	/*
+	 * A unit test that checks if the results of divide are correct with numerator
+	 * equal to zero
+	 */
+	
+	@Test
+	public void testDivideNumeratorZero() {
+		Assert.assertEquals(0.0, ao.divide(0, 5), 0.0001);
+	}
+
+	/*
 	 * A unit test that checks if the illegal argument exception is thrown correctly
 	 */
 	@Test(expected = ArithmeticException.class)
@@ -49,7 +59,7 @@ public class ArithmeticOperationsTest {
 	public ExpectedException thrown = ExpectedException.none();
 
 	@Test
-	public void testNegativeXException() {
+	public void testMultiplyNegativeXException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
 		ao.multiply(-2, 4);
@@ -61,7 +71,7 @@ public class ArithmeticOperationsTest {
 	 */
 
 	@Test
-	public void testNegativeYException() {
+	public void testMultiplyNegativeYException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
 		ao.multiply(2, -4);
@@ -73,10 +83,28 @@ public class ArithmeticOperationsTest {
 	 */
 
 	@Test
-	public void testMaxValueException() {
+	public void testMultiplyMaxValueException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The product does not fit in an Integer variable");
-		ao.multiply(9999999, 9999999);
+		ao.multiply(10000000, 10000000);
+	}
+	
+	/*
+	 * A unit test that causes the ArithmeticException for y equal to zero
+	 */
+	
+	@Test (expected = ArithmeticException.class)
+	public void testMultiplyYZero() {
+		ao.multiply(1, 0);
+	}
+	
+	/*
+	 * A unit test that causes the ArithmeticException for y equal to zero
+	 */
+	
+	@Test
+	public void testMultiplyXZero() {
+		Assert.assertEquals(0, ao.multiply(0, 5), 0.0001);
 	}
 
 }
