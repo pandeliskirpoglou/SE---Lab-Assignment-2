@@ -45,7 +45,7 @@ public class MyMath {
 		if (n < 2) {
 			throw new IllegalArgumentException("No prime numbers below 2");
 		} else {
-			for (int i = 2; i <= n / 2; ++i) {
+			for (int i = 2; i <= n / 2; ++i) {  // Checking to n/2 for complexity
 				if (n % i == 0) {
 					isPrimeNumber = false;
 					break;

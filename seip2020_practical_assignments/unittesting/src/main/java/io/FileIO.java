@@ -21,13 +21,13 @@ public class FileIO {
 	/**
 	 * Reads a file that contains numbers line by line 
 	 * and returns an array of the integers found in the file.
-	 * @param filepath the file that contains the numbers
+	 * @param filepath the file that contains the numbersmvn
 	 * @return an array of numbers
 	 * @exception IllegalArgumentException when the given file does not exist
 	 * @exception IllegalArgumentException when the given file is empty
 	 * @exception NumberFormatException for checking invalid entries
 	 * @exception IOException when an IO interruption occurs (not required to be tested)
-	 */
+	 */ 
 	public int[] readFile(String filepath) {
 		File file = new File(filepath);
 		if (!file.exists()) 
