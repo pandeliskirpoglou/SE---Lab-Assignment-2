@@ -43,7 +43,7 @@ public class FileIO {
 					int number = Integer.parseInt(line);
 					numbersList.add(number);
 				} catch (NumberFormatException e) {
-					throw new NumberFormatException("Grade number should be an integer");
+					// Do nothing will skip the the current invalid line
 				}
 			}
 		} catch (IOException e) {
