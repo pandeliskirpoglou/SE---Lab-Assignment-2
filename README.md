@@ -1,77 +1,46 @@
 # SE--Practical Assignments
 
+[![Build Status](https://travis-ci.com/pandeliskirpoglou/SE---Lab-Assignment-2.svg?token=sj2oqcqiqbuxzsYcRzSv&branch=master)](https://travis-ci.com/pandeliskirpoglou/SE---Lab-Assignment-2)
+[![codecov](https://codecov.io/gh/pandeliskirpoglou/SE---Lab-Assignment-2/branch/master/graph/badge.svg?token=47G5K7Y1IH)](https://codecov.io/gh/pandeliskirpoglou/SE---Lab-Assignment-2)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Purpose of this Repository
 
 The purpose of this repository is to complete and deliver certain functions of different assignments such as:
 
 * Building a histogram of grades between 0-10
+* Testing Arithmetic Operations
 
-## Getting Started
+## Build Project
 
-First you need to clone the repository in a folder of your preference. Then through the command line head to the root directory of your project and 
-execute the command:
+In order to build the project you will need to clone the repository and head to the main source folder.
+Once you are there use the command :
 ```
-mvn package
+mvn clean install jacoco:report
 ```
-This command provides the corresponding jar file in each module's target directory. 
+After this feel free to head to each module and experience it's usage. For the module that is being tested
+this command will also let you generate a code coverage report which will be in the folder :
+```
+target/site/jacoco
+```
+For any further instructions head to the README file of each separate module
 
-### Grades Histogram
+## Instructions for modules
 
-The current module uses a JFreeChart dependency
-```
-	<dependency>
-		<groupId>org.jfree</groupId>
-		<artifactId>jfreechart</artifactId>
-		<version>1.5.0</version>
-	</dependency>
-```
-
-and the plugin of the definition class
-
-```
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-assembly-plugin</artifactId>
-			<configuration>
-				<archive>
-					<manifest>
-						<addClasspath>true</addClasspath>
-						<mainClass>seip2020_practical_assignments.HistogramGenerator</mainClass>						
-					</manifest>
-				</archive>
-				<descriptorRefs>
-					<descriptorRef>jar-with-dependencies</descriptorRef>
-				</descriptorRefs>
-			</configuration>
-			<executions>
-				<execution>
-					<id>make-assembly</id>
-					<phase>package</phase>
-					<goals>
-						<goal>single</goal>
-					</goals>
-				</execution>
-			</executions>
-	</plugin>
-```
-
-In order for the execution to work you need to enter the path of the existing file after the name of the executable jar. Please take into consideration that only grades 
-between 0-10 will be counted. Don't forget to use double \\ between the files of the path so the string is inputed aproprietly. 
-For example a path such: C:\\Users\\user1\\githubRepos\\grades.txt shall be changed to C:\\\Users\\\user1\\\githubRepos\\\grades.txt
-So the command for the execution will look like this:
-
-```
-java -jar gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar C:\\Users\\user1\\githubRepos\\grades.txt
-```
+* [Grades Histogram](seip2020_practical_assignments/gradeshistogram/README.md)
+* [Testing of Arithmetic Operations](seip2020_practical_assignments/unittesting/README.md)
 
 ## Built With
 
+* [Mockito](https://mvnrepository.com/artifact/org.mockito/mockito-all) - Repository used for mock testing
+* [JUnit 4.12](https://mvnrepository.com/artifact/junit/junit/4.12) - Repository used for testing
 * [JFreeChart](https://mvnrepository.com/artifact/org.jfree/jfreechart) - Repository used for charts
 * [Maven](https://maven.apache.org/) - Dependency Management
 
 
 ## How to
 
+* Use Travis - [Travis Setup](https://docs.travis-ci.com/user/tutorial/)
 * Setup Maven for Windows - [Maven Download](https://maven.apache.org/download.cgi)
 
 ## Authors
