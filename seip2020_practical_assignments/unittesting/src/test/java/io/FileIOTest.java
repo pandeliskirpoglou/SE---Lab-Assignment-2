@@ -62,10 +62,10 @@ public class FileIOTest {
 
 	@Test
 	public void testReadFileContainsInvalidEntries() {
-		thrown.expect(NumberFormatException.class);
-		thrown.expectMessage("Grade number should be an integer");
-		String invalidFilePath = path.concat("grades_invalid.txt");
-		fileio.readFile(invalidFilePath);
+		int[] expectedNumbers = new int[] { 3, 9, 2, 10, 8, 0, 3 };
+		String validPath = path.concat("grades_invalid.txt");
+
+		Assert.assertArrayEquals(expectedNumbers, fileio.readFile(validPath));
 	}
 
 }
