@@ -1,3 +1,63 @@
+# Source Code Analyzer
+
+## Purpose of this module
+
+This module is here to help you analyze files of source code by exporting a file with metrics of
+such as LOC, NOM, NOC. It also allows you to analyze a file in different methods such as regex or strcomp.
+The module also allows for different storage locations such locally or on the web. The actual purpose is to 
+see how to rebuild a project having in mind that someone may want to add his own analyzer types, metrics etc.
+
+## Getting Started
+
+First you need to clone the repository in a folder of your preference. Then through the command line head to the root directory of your project and 
+execute the command:
+```
+mvn clean package jacoco:report
+```
+This will let you package the project, see how the classes are being tested,  and generate a code coverall report in the folder :
+```
+target/site/jacoco
+```
+
+In order to run the project and get the output you need to first transfer preferable in the resources file
+and then execute a command such as the following:
+```
+java –jar “jar-with-dependencies” arg0 arg1 arg2 arg3 arg4
+```
+Where args translate to:
+
+* arg0 : “JavaSourceCodeInputFile” (e.g., src/test/resources/TestClass.java)
+* arg1 : “sourceCodeAnalyzerType” [regex|strcomp]
+* arg2 : “SourceCodeLocationType” [local|web]
+* arg3 : “OutputFilePath” (e.g., ../output_metrics_file)
+* arg4 : “OutputFileType” [csv|json]
+
+One example is:
+```
+java –jar ./target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./src/test/resources/TestClass.java regex local metrics_results csv
+```
+
+## Documentation of decisions
+
+The UML Diagram that the module is build on is the following:
+
+<img src="UML_Diagram.png" width="800"/>
+
+### Metrics Exporter
+
+In the metrics exporter part of the module I used the Factory on Strategy pattern for the following reasons:
+* Separations of concerns - The instantiation of JSON and CSV classes are separated and done in the factory
+* Flexibility - It is easy to extend the function by adding a new type withoud affecting the client
+
+### Code Analyzer
+
+In the code analyzer funtcion I used a facade class and combined the rest with a bridge strategy for the following reasons:
+* Facade - Easy to hide functonality of the project and let the client perform actions using just one method providing a simple interface
+* Bridge - Types of metrics and types of analyzing types can vary independently so adding a new metric does has no affects on FileLocation and has few
+affects on analyzer type, adding an analyzer type has no affect on the Metrics.
+
+## Dependencies
+
 **Mockito Dependency**
 ```
 	<dependency>
@@ -34,3 +94,5 @@
 		<version>4.3.0</version>
 	</plugin>
 ```
+
+
