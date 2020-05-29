@@ -1,13 +1,36 @@
-1. Build the executable Java application with: 
-	mvn package jacoco:report
+**Mockito Dependency**
+```
+	<dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-core</artifactId>
+		<version>2.27.0</version>
+		<scope>test</scope>
+	</dependency>
+```
 
-2. Run the executable by executing
-	java –jar “jar-with-dependencies” arg0 arg1 arg2 arg3 arg4
-were args translate to: 	
-	arg0 = “JavaSourceCodeInputFile” (e.g., src/test/resources/TestClass.java)
-	arg1 = “sourceCodeAnalyzerType” [regex|strcomp]
-	arg2 = “SourceCodeLocationType” [local|web]
-	arg3 = “OutputFilePath” (e.g., ../output_metrics_file)
-	arg4 = “OutputFileType” [csv|json]
-example: 
-	java –jar ./target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./src/test/resources/TestClass.java regex local metrics_results csv
+**Jacoco plugin**
+```
+	<plugin>
+		<groupId>org.jacoco</groupId>
+		<artifactId>jacoco-maven-plugin</artifactId>
+		<version>0.8.3</version>
+		<executions>
+			<execution>
+				<id>prepare-agent</id>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+
+```
+
+**Coveralls plugin**
+```
+	<plugin>
+		<groupId>org.eluder.coveralls</groupId>
+		<artifactId>coveralls-maven-plugin</artifactId>
+		<version>4.3.0</version>
+	</plugin>
+```
