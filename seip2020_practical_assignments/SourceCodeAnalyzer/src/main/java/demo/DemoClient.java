@@ -23,21 +23,15 @@ public class DemoClient {
 			outputFileType = args[4];
 		} else if (args.length != 0) {
 			System.out.println("Incorrect number of arguments.");
-			System.exit(1);
+			System.exit(1); 
 		}
-
-		SourceCodeAnalyzer analyzer = new SourceCodeAnalyzer(sourceFileLocation);
-		int loc = analyzer.calculateLOC(filepath, sourceCodeAnalyzerType);
-		int nom = analyzer.calculateNOM(filepath, sourceCodeAnalyzerType);
-		int noc = analyzer.calculateNOC(filepath, sourceCodeAnalyzerType);
 		
-		Map<String, Integer> metrics = new HashMap<>();
-		metrics.put("loc",loc);
-		metrics.put("nom",nom);
-		metrics.put("noc",noc);
+		AnalyzerFacade af = new AnalyzerFacade();
+		Map<String, Integer> calculatedMetrics = af.calculateMetrics(filepath, sourceFileLocation, sourceCodeAnalyzerType);
 				
-		MetricsExporter exporter = new MetricsExporter();
-		exporter.writeFile(outputFileType, metrics, outputFilePath);
+		MetricsExporterFactory meFactory = new MetricsExporterFactory();
+		MetricsExporter exporter = meFactory.createMetricsExporter(outputFileType);
+		exporter.writeFile(calculatedMetrics, outputFilePath);
 	}
 
 }
