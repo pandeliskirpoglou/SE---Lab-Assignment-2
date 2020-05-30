@@ -45,16 +45,17 @@ The UML Diagram that the module is build on is the following:
 
 ### Metrics Exporter
 
-In the metrics exporter part of the module I used the Factory on Strategy pattern for the following reasons:
+In the metrics exporter part of the module (classes : MetricsExporterFactory, MetricsExporter, CSVExporter, JSONExporter) I used the Factory on Strategy pattern for the following reasons:
 * Separations of concerns - The instantiation of JSON and CSV classes are separated and done in the factory
 * Flexibility - It is easy to extend the function by adding a new type withoud affecting the client
 
 ### Code Analyzer
 
 In the code analyzer funtcion I used a facade class and combined the rest with a bridge strategy for the following reasons:
-* Facade - Easy to hide functonality of the project and let the client perform actions using just one method providing a simple interface
-* Bridge - Types of metrics and types of analyzing types can vary independently so adding a new metric does has no affects on FileLocation and has few
-affects on analyzer type, adding an analyzer type has no affect on the Metrics.
+* Facade (AnalyzerFacade) - Easy to hide functonality of the project and let the client perform actions using just one method providing a simple interface. Making any types of changes under the files of the facade has no affect on the client.
+* Bridge (Metrics (+LOC,NOC,NOM) - FileLocation (+Local,Web) - AnalyzerType (+Strcomp,Regex))- Types of metrics and types of analyzing types can vary independently so adding a new metric does has no affects on FileLocation and has few
+affects on analyzer type, adding an analyzer type has no affect on the Metrics. Metrics serves an abstract class for the metrics that can be added. AnalyzerType serves as the interface of
+the analyzer types. FileLocation serves as the interface of the possible file store locations.
 
 ## Dependencies
 
