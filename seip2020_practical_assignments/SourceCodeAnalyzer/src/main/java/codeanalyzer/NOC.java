@@ -21,7 +21,7 @@ public class NOC extends Metric{
 
 	@Override
 	public int calculateMetric() {
-		int noc = this.analyzerType.caluclateNOC(this.fileLocation, this.filepath);
+		int noc = this.analyzerType.calculateNOC(this.fileLocation, this.filepath);
 		return noc;
 	}
 
