@@ -53,7 +53,7 @@ public class Regex implements AnalyzerType {
 	 */
 
 	@Override
-	public int caluclateNOC(FileLocation fileLocation, String filepath) {
+	public int calculateNOC(FileLocation fileLocation, String filepath) {
 		String sourceCode = fileLocation.readFileIntoString(filepath);
 		Pattern pattern = Pattern.compile(".*\\s*class\\s+.*");
 		Matcher classSignatures = pattern.matcher(sourceCode);

@@ -38,6 +38,7 @@ public class Web implements FileLocation {
 			}
 			reader.close();
 		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		return lines;
 	}

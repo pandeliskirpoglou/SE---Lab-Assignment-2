@@ -34,7 +34,7 @@ public interface AnalyzerType {
 	 * @return noc int value of current metric for certain analyzer type
 	 */
 
-	public int caluclateNOC(FileLocation fileLocation, String filepath);
+	public int calculateNOC(FileLocation fileLocation, String filepath);
 
 	/**
 	 * Calculates the value of NOM metric according to analyzer type

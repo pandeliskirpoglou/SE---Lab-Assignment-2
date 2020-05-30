@@ -49,7 +49,7 @@ public class Strcomp implements AnalyzerType {
 	 */
 
 	@Override
-	public int caluclateNOC(FileLocation fileLocation, String filepath) {
+	public int calculateNOC(FileLocation fileLocation, String filepath) {
 		List<String> sourceCodeList = fileLocation.readFileIntoList(filepath);
 		int classCounter = 0;
 		for (String line : sourceCodeList) {
