@@ -27,18 +27,22 @@ public class Regex implements AnalyzerType {
 	@Override
 	public int calculateLOC(FileLocation fileLocation, String filepath) {
 		String sourceCode = fileLocation.readFileIntoString(filepath);
-		Pattern pattern = Pattern.compile("((//.*)|(/\\*.*)|(\\*+.*))");
-		Matcher nonCodeLinesMatcher = pattern.matcher(sourceCode);
-
 		int nonCodeLinesCounter = 0;
-		while (nonCodeLinesMatcher.find()) {
-			nonCodeLinesCounter++;
+		int loc = 0;
+		if (!sourceCode.equals(" ")) {
+			Pattern pattern = Pattern.compile("((//.*)|(/\\*.*)|(\\*+.*))");
+			Matcher nonCodeLinesMatcher = pattern.matcher(sourceCode);
+	
+			while (nonCodeLinesMatcher.find()) {
+				nonCodeLinesCounter++;
+			}
+	
+			int sourceFileLength = sourceCode.split("\n").length;
+			loc = sourceFileLength - nonCodeLinesCounter;
+		} else {
+			loc = 0;
 		}
-
-		int sourceFileLength = sourceCode.split("\n").length;
-		int loc = sourceFileLength - nonCodeLinesCounter;
-
-		return loc;
+			return loc;
 	}
 	
 	/**
@@ -55,12 +59,16 @@ public class Regex implements AnalyzerType {
 	@Override
 	public int calculateNOC(FileLocation fileLocation, String filepath) {
 		String sourceCode = fileLocation.readFileIntoString(filepath);
-		Pattern pattern = Pattern.compile(".*\\s*class\\s+.*");
-		Matcher classSignatures = pattern.matcher(sourceCode);
-
 		int classCounter = 0;
-		while (classSignatures.find()) {
-			classCounter++;
+		if (!sourceCode.equals(" ")) {
+			Pattern pattern = Pattern.compile(".*\\s*class\\s+.*");
+			Matcher classSignatures = pattern.matcher(sourceCode);
+	
+			while (classSignatures.find()) {
+				classCounter++;
+			} 
+		} else {
+			classCounter = 0;
 		}
 		return classCounter;
 	}
@@ -79,13 +87,17 @@ public class Regex implements AnalyzerType {
 	@Override
 	public int calculateNOM(FileLocation fileLocation, String filepath) {
 		String sourceCode = fileLocation.readFileIntoString(filepath);
-		Pattern pattern = Pattern.compile(
-				".*(public |protected |private |static )?[\\w\\<\\>\\[\\]]+\\s+(\\w+) *\\([^\\)]*\\) *(\\{?|[^;]).*");
-		Matcher methodSignatures = pattern.matcher(sourceCode);
-
 		int methodCounter = 0;
-		while (methodSignatures.find()) {
-			methodCounter++;
+		if (!sourceCode.equals(" ")) {
+			Pattern pattern = Pattern.compile(
+					".*(public |protected |private |static )?[\\w\\<\\>\\[\\]]+\\s+(\\w+) *\\([^\\)]*\\) *(\\{?|[^;]).*");
+			Matcher methodSignatures = pattern.matcher(sourceCode);
+	
+			while (methodSignatures.find()) {
+				methodCounter++;
+			}
+		} else {
+			methodCounter = 0;
 		}
 		return methodCounter;
 	}
