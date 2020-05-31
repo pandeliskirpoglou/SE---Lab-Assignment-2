@@ -73,7 +73,7 @@ public class AnalyzerFacadeTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testCalculateMetricsWithNoanalyzerType() {
-		Map<String, Integer> resultMetrics = af.calculateMetrics(filepathLocal, "does_not_matter", "wrong_type");
+		Map<String, Integer> resultMetrics = af.calculateMetrics(filepathLocal, "regex", "wrong_type");
 	}
 
 
