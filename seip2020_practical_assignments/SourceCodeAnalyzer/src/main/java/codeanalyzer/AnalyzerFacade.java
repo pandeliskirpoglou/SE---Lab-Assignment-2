@@ -28,38 +28,30 @@ public class AnalyzerFacade {
 
 	public Map<String, Integer> calculateMetrics(String filepath, String fileLocation, String analyzerType) {
 		Map<String, Integer> calcMetrics = new HashMap<>();
-
-		Metric loc;
-		Metric nom;
-		Metric noc;
-
+		
+		AnalyzerType at = null;
+		FileLocation fl = null;
+		
+		
 		if (analyzerType.equals("regex")) {
-			if (fileLocation.equals("local")) {
-				loc = new LOC(new Regex(), new Local(), filepath);
-				nom = new NOM(new Regex(), new Local(), filepath);
-				noc = new NOC(new Regex(), new Local(), filepath);
-			} else if (fileLocation.equals("web")) {
-				loc = new LOC(new Regex(), new Web(), filepath);
-				nom = new NOM(new Regex(), new Web(), filepath);
-				noc = new NOC(new Regex(), new Web(), filepath);
-			} else {
-				throw new IllegalArgumentException("Unknown type : " + fileLocation);
-			}
+			at = new Regex();
 		} else if (analyzerType.equals("strcomp")) {
-			if (fileLocation.equals("local")) {
-				loc = new LOC(new Strcomp(), new Local(), filepath);
-				nom = new NOM(new Strcomp(), new Local(), filepath);
-				noc = new NOC(new Strcomp(), new Local(), filepath);
-			} else if (fileLocation.equals("web")) {
-				loc = new LOC(new Strcomp(), new Web(), filepath);
-				nom = new NOM(new Strcomp(), new Web(), filepath);
-				noc = new NOC(new Strcomp(), new Web(), filepath);
-			} else {
-				throw new IllegalArgumentException("Unknown type : " + fileLocation);
-			}
+			at = new Strcomp();
 		} else {
 			throw new IllegalArgumentException("Unknown type : " + analyzerType);
 		}
+
+		if (fileLocation.equals("local")) {
+			fl = new Local();
+		} else if (fileLocation.equals("web")) {
+			fl = new Web();
+		} else {
+			throw new IllegalArgumentException("Unknown type : " + fileLocation);
+		}
+		
+		Metric loc = new LOC(at, fl, filepath);
+		Metric nom = new NOM(at, fl, filepath);
+		Metric noc = new NOC(at, fl, filepath);
 
 		calcMetrics.put("loc", loc.calculateMetric());
 		calcMetrics.put("nom", nom.calculateMetric());
