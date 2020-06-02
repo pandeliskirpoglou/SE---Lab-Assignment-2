@@ -10,6 +10,7 @@ The purpose of this repository is to complete and deliver certain functions of d
 
 * Building a histogram of grades between 0-10
 * Testing Arithmetic Operations
+* Analyzing given source code
 
 ## Build Project
 
@@ -29,6 +30,7 @@ For any further instructions head to the README file of each separate module
 
 * [Grades Histogram](seip2020_practical_assignments/gradeshistogram/README.md)
 * [Testing of Arithmetic Operations](seip2020_practical_assignments/unittesting/README.md)
+* [Source Code Analyzer](seip2020_practical_assignments/SourceCodeAnalyzer/README.md)
 
 ## Built With
 
